@@ -1,6 +1,6 @@
 script "muffin.ash";
 // written by frazazel (ign: SketchySolid) v2022-07-07
-// type "muffin" into KoLmafia's GCLI for usage instructions
+// type "muffin help" into KoLmafia's GCLI for usage instructions
 
 boolean boolean_property(string str) { return to_boolean(get_property(str)); }
 item item_property(string str)       { return to_item(get_property(str)); }
