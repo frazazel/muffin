@@ -145,17 +145,8 @@ item to_muffin(string muff) {
 	return it;
 }
 
-void print_help(boolean verbose) {
+void print_status() {
 	item moo = item_property("muffinOnOrder");
-	
-	print("muffin - help | collect | [order] blue|choc|bran - manage muffins from the monorail breakfast counter","black");
-	if(verbose) {
-		print("accepts the following aliases for each muffin type:");
-		print("blueberry muffin,blue,blueberry,1,meat,hp");
-		print("chocolate chip muffin,choc,chocolate,chocolate chip,2,both");
-		print("bran muffin,bran,3,items,mp");
-	}
-	
 	if(boolean_property("_muffinOrderedToday")) {
 		print("You have already ordered a ["+moo+"] for tomorrow. Come back after rollover!", "green");
 	} else {
@@ -166,6 +157,17 @@ void print_help(boolean verbose) {
 		} else
 			print("You don't have an [earthenware muffin tin]!","orange");
 	}
+}
+
+void print_help(boolean verbose) {
+	print("muffin - help | status | collect | [order] blue|choc|bran - manage muffins from the monorail breakfast counter","black");
+	if(verbose) {
+		print("accepts the following aliases for each muffin type:");
+		print("blueberry muffin, blue, blueberry, 1, meat, hp");
+		print("chocolate chip muffin, choc, chocolate, chocolate chip, 2, both");
+		print("bran muffin, bran, 3, items, mp");
+	}
+	print_status();
 }
 
 void main(string blarg){
@@ -192,6 +194,9 @@ void main(string blarg){
 		case "":
 		case "help":
 			print_help(true);
+			break;
+		case "status":
+			print_status();
 			break;
 		default:
 		// if the command is not recognized, check to see if a muffin alias has been provided directly.
