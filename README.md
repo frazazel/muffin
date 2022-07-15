@@ -3,7 +3,7 @@ A muffin-management script for Kingdom of Loathing - for use with KoLmafia
 
 Copy and paste this into KoLmafia's GCLI to install:
 ```
-svn checkout https://github.com/frazazel/muffin/branches/main/release
+git checkout https://github.com/frazazel/muffin.git
 ```
 This script will go to the monorail breakfast counter to order and pick up muffins for you. It requires that you own an [earthenware muffin tin].
 
